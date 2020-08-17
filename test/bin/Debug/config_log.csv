@@ -1,0 +1,3 @@
+组名,配置方式,xml配置,sh配置,是否不停机更新,更新服务项
+"UMSGRP1","统一配置","u1.xml,u2.xml","uu1.sh,uu2.sh","否","--"
+"UMSGRP2","统一配置","u1.xml,u2.xml","uu1.sh,uu2.sh","否","--"

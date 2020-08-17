@@ -1,0 +1,115 @@
+#
+#  Copyright 2020, China UnionPay Co., Ltd.  All right reserved.
+#
+#  THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF CHINA UNIONPAY CO.,
+#  LTD.  THE CONTENTS OF THIS FILE MAY NOT BE DISCLOSED TO THIRD
+#  PARTIES, COPIED OR DUPLICATED IN ANY FORM, IN WHOLE OR IN PART,
+#  WITHOUT THE PRIOR WRITTEN PERMISSION OF CHINA UNIONPAY CO., LTD.
+#
+#
+#  自动化安装编排文件
+#  edited by malei 2020年8月14日 10:37
+#
+#
+## 1 系统拓扑(分组描述说明，请以实际情况为准！！！！)
+## 
+## (<主机名>,mapbatas,MAPS_BJ,maps_upel,,DEFAULT,BJBATGRP1,,,<BAT1主机管理IP>,<BAT1主机服务IP>,':null)
+## (<主机名>,mapbatas,MAPS_BJ,maps_upel,,DEFAULT,BJBATGRP1,,,<BAT2主机管理IP>,<BAT2主机服务IP>,':null)
+## (<主机名>,mapbatas,MAPS_BJ,maps_upel,,DEFAULT,BJBATGRP2,,,<BAT3主机管理IP>,<BAT3主机服务IP>,':null)
+## (<主机名>,mapbatas,MAPS_BJ,maps_upel,,DEFAULT,BJBATGRP2,,,<BAT4主机管理IP>,<BAT4主机服务IP>,':null)
+## (<主机名>,maponlas,MAPS_BJ,maps_upel,,DEFAULT,BJONLGRP1,,,<ONL1主机管理IP>,<ONL1主机服务IP>,':null)
+## (<主机名>,maponlas,MAPS_BJ,maps_upel,,DEFAULT,BJONLGRP1,,,<ONL2主机管理IP>,<ONL2主机服务IP>,':null)
+## (<主机名>,maponlas,MAPS_BJ,maps_upel,,DEFAULT,BJONLGRP1,,,<ONL3主机管理IP>,<ONL3主机服务IP>,':null)
+## (<主机名>,maponlas,MAPS_BJ,maps_upel,,DEFAULT,BJONLGRP1,,,<ONL4主机管理IP>,<ONL4主机服务IP>,':null)
+## (<主机名>,maponlas,MAPS_BJ,maps_upel,,DEFAULT,BJONLGRP2,ONLGRP2_A,,<ONL5主机管理IP>,<ONL5主机服务IP>,':null)
+## (<主机名>,maponlas,MAPS_BJ,maps_upel,,DEFAULT,BJONLGRP2,ONLGRP2_A,,<ONL6主机管理IP>,<ONL6主机服务IP>,':null)
+## (<主机名>,maponlas,MAPS_BJ,maps_upel,,DEFAULT,BJONLGRP2,ONLGRP2_A,,<ONL7主机管理IP>,<ONL7主机服务IP>,':null)
+## (<主机名>,maponlas,MAPS_BJ,maps_upel,,DEFAULT,BJONLGRP2,ONLGRP2_A,,<ONL8主机管理IP>,<ONL8主机服务IP>,':null)
+## (<主机名>,maponlas,MAPS_BJ,maps_upel,,DEFAULT,BJONLGRP2,ONLGRP2_B,,<ONL9主机管理IP>,<ONL9主机服务IP>,':null)
+## (<主机名>,maponlas,MAPS_BJ,maps_upel,,DEFAULT,BJONLGRP2,ONLGRP2_B,,<ONL10主机管理IP>,<ONL10主机服务IP>,':null)
+## (<主机名>,maponlas,MAPS_BJ,maps_upel,,DEFAULT,BJONLGRP2,ONLGRP2_B,,<ONL11主机管理IP>,<ONL11主机服务IP>,':null)
+## (<主机名>,maponlas,MAPS_BJ,maps_upel,,DEFAULT,BJONLGRP2,ONLGRP2_B,,<ONL12主机管理IP>,<ONL12主机服务IP>,':null)
+## (<主机名>,maponlas,MAPS_BJ,maps_upel,,DEFAULT,BJONLGRP2,ONLGRP2_C,,<ONL13主机管理IP>,<ONL13主机服务IP>,':null)
+## (<主机名>,maponlas,MAPS_BJ,maps_upel,,DEFAULT,BJONLGRP2,ONLGRP2_C,,<ONL14主机管理IP>,<ONL14主机服务IP>,':null)
+## (<主机名>,maponlas,MAPS_BJ,maps_upel,,DEFAULT,BJONLGRP2,ONLGRP2_C,,<ONL15主机管理IP>,<ONL15主机服务IP>,':null)
+## (<主机名>,maponlas,MAPS_BJ,maps_upel,,DEFAULT,BJONLGRP2,ONLGRP2_C,,<ONL16主机管理IP>,<ONL16主机服务IP>,':null)
+## (<主机名>,mapumsas,MAPS_BJ,maps_upel,,DEFAULT,BJUMSGRP1,,,<UMS1主机管理IP>,<UMS1主机服务IP>,':null)
+## (<主机名>,mapumsas,MAPS_BJ,maps_upel,,DEFAULT,BJUMSGRP1,,,<UMS2主机管理IP>,<UMS2主机服务IP>,':null)
+## (<主机名>,mapumsas,MAPS_BJ,maps_upel,,DEFAULT,BJUMSGRP2,,,<UMS3主机管理IP>,<UMS3主机服务IP>,':null)
+## (<主机名>,mapumsas,MAPS_BJ,maps_upel,,DEFAULT,BJUMSGRP2,,,<UMS4主机管理IP>,<UMS4主机服务IP>,':null)
+## (<主机名>,maphcsas,MAPS_BJ,maps_upel,,DEFAULT,BJHCSGRP1,,,<HCS1主机管理IP>,<HCS1主机服务IP>,':null)
+## (<主机名>,maphcsas,MAPS_BJ,maps_upel,,DEFAULT,BJHCSGRP2,,,<HCS2主机管理IP>,<HCS2主机服务IP>,':null)
+## 
+## REG/GAP主机暂时由信总管理和安装，北信不需要配置
+## 
+## 
+
+
+
+# #<AP_USER>应用主机用户名、<YYYYMMDD>（安装日期）、<VERSION>（版本名）、<MODULE>（模块名）
+# #<HOSTNAME>（主机名）、<UNIT>（单元名）
+# **************************************************************************************************
+# **         [步骤名][<AP_USER>@系统名:组名:主机名(可选)]                                           **
+# **         INSTALL [ 3600, Y]    = sh  ~/install/<VERSION>/<MODULE>/install/<脚本相对路径>       **
+# **************************************************************************************************
+# #回退步骤，仅当安装出现异常时执行
+#            ROLLBACK [ 90, N]     = sh ~/install/<VERSION>/<MODULE>/install/<脚本相对路径>
+
+#<VERSION>: MAPS-1.1
+#<MODULE>:  maps_upel
+#组名：   ONL1   BAT1 ...
+#ROLLBACK 和 CLEARUP阶段的Y是没有用的，直接不询问执行
+
+## 自动化安装
+## 
+
+## 2 系统变量
+## 
+## (<VERSION>,maps_upel,BAKDATE, <系统变量值>)
+### 选配
+## (<VERSION>,maps_upel,INSTALLDIR, <系统变量值>)
+## (<VERSION>,maps_upel,BAKDIR, <系统变量值>)
+## (<VERSION>,maps_upel,MGMDBADDR, <系统变量值>)
+## (<VERSION>,maps_upel,MGMDBPORT, <系统变量值>)
+## (<VERSION>,maps_upel,BATDBADDR, <系统变量值>)
+## (<VERSION>,maps_upel,BATDBPORT, <系统变量值>)
+## (<VERSION>,maps_upel,BATDATANODE, <系统变量值>)
+## (<VERSION>,maps_upel,ONLDBADDR, <系统变量值>)
+## (<VERSION>,maps_upel,ONLDBPORT, <系统变量值>)
+## (<VERSION>,maps_upel,ONLDATANODE, <系统变量值>)
+
+[确认步骤!!请确认数据库变更已经完成!!][<AP_USER>@MAPS:ONLGRP1:1]
+PREP [7200, Y]       = echo "请确认数据库变更步骤已完成！！！"
+
+############# 本次不更新行业与内容参数
+
+[停止健康汇总端主][<AP_USER>@MAPS_BJ:BJHCSGRP1]
+INSTALL [ 7200, N]   = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/genConfig.sh  <VERSION>  <MODULE>  BJMAPHCS
+                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh stop -s HCSS -s MTQ
+ROLLBACK [3600, Y]   = echo "回退--停止健康汇总端主"
+                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh stop -s HCSS -s MTQ
+                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh start -s HCSS -s MTQ
+
+
+
+
+
+
+[安装健康汇总端主][<AP_USER>@MAPS_BJ:BJHCSGRP1]
+INSTALL [ 7200, N]   = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/genConfig.sh  <VERSION>  <MODULE>  BJMAPHCS
+                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh backup -s HCS -i \$INSTALLDIR -b \$BAKDIR -d \$BAKDATE
+                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh update -s HCS -i \$INSTALLDIR
+                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh start -s HCSS -s MTQ
+ROLLBACK [3600, Y]   = echo "回退--安装健康汇总端主"
+                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh stop -s HCSS -s MTQ
+                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recover -s HCS -b \$BAKDIR -i \$INSTALLDIR -d \$BAKDATE
+                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh start -s HCSS -s MTQ
+
+
+
+[安装健康汇总端备][<AP_USER>@MAPS_BJ:BJHCSGRP2]
+INSTALL [ 7200, N]   = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/genConfig.sh  <VERSION>  <MODULE>  BJMAPHCS
+                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh backup -s HCS -i \$INSTALLDIR -b \$BAKDIR -d \$BAKDATE
+                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh update -s HCS -i \$INSTALLDIR
+ROLLBACK [3600, Y]   = echo "回退--安装健康汇总端备"
+                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recover -s HCS -b \$BAKDIR -i \$INSTALLDIR -d \$BAKDATE

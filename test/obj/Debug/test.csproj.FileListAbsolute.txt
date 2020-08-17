@@ -1,0 +1,20 @@
+C:\Users\malei\Documents\SharpDevelop Projects\test\test\bin\Debug\test.exe.config
+C:\Users\malei\Documents\SharpDevelop Projects\test\test\bin\Debug\test.exe
+C:\Users\malei\Documents\SharpDevelop Projects\test\test\bin\Debug\test.pdb
+C:\Users\malei\Documents\SharpDevelop Projects\test\test\obj\Debug\test.csprojResolveAssemblyReference.cache
+C:\Users\malei\Documents\SharpDevelop Projects\test\test\obj\Debug\test.exe
+C:\Users\malei\Documents\SharpDevelop Projects\test\test\obj\Debug\test.pdb
+C:\Users\malei\Documents\SharpDevelop Projects\test\test\obj\Debug\test.MainForm.resources
+C:\Users\malei\Documents\SharpDevelop Projects\test\test\obj\Debug\test.csproj.GenerateResource.Cache
+C:\Users\malei\Documents\SharpDevelop Projects\test\test\obj\Debug\test.Form2.resources
+D:\KDR\test\test\bin\Debug\test.exe.config
+D:\KDR\test\test\bin\Debug\test.exe
+D:\KDR\test\test\bin\Debug\test.pdb
+D:\KDR\test\test\obj\Debug\test.Form2.resources
+D:\KDR\test\test\obj\Debug\test.MainForm.resources
+D:\KDR\test\test\obj\Debug\test.csproj.GenerateResource.cache
+D:\KDR\test\test\obj\Debug\test.exe
+D:\KDR\test\test\obj\Debug\test.pdb
+D:\KDR\test\test\obj\Debug\test.csprojAssemblyReference.cache
+D:\KDR\test\test\obj\Debug\test.csproj.CoreCompileInputs.cache
+D:\KDR\test\test\obj\Debug\test.Properties.Resources.resources
