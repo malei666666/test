@@ -891,18 +891,18 @@ namespace test
 
 
 									foreach (string tnow in cfg)
-									{ if (tnow != "*" && tnow != "") sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh updcfg -s \$INSTALLDIR/mtq/etc/" + tnow + @" -f \$HOME/install/<VERSION>/<MODULE>/install/patchscript_linux/etc/operation.ini"); }
+									{ if (tnow != "") sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh updcfg -s \$INSTALLDIR/mtq/etc/" + tnow + @" -f \$HOME/install/<VERSION>/<MODULE>/install/patchscript_linux/etc/operation.ini"); }
 									foreach (string onow in other)
-									{ if (onow != "*" && onow != "") sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh other \"sh $HOME/onl/sbin/" + onow + "\""); }
+									{ if (onow != "") sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh other \"sh $HOME/onl/sbin/" + onow + "\""); }
 									sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh start -s ONL -s MTQ");
 									sw.WriteLine("ROLLBACK [3600, Y]   = echo \"回退--安装联机组应用\"");
 									sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh stop -s ONL -s MTQ");
 									sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh shm -p CLOSE");
 									sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recover -s ONL -b \$BAKDIR -i \$INSTALLDIR -d \$BAKDATE");
 									foreach (string tnow in cfg)
-									{ if (tnow != "*" && tnow != "") sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recovercfg -f " + tnow + @" -d \$INSTALLDIR/mtq/etc -b \$BAKDIR/ONL_\$BAKDATE/maps_upel/mtq/etc"); }
+									{ if (tnow != "") sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recovercfg -f " + tnow + @" -d \$INSTALLDIR/mtq/etc -b \$BAKDIR/ONL_\$BAKDATE/maps_upel/mtq/etc"); }
 									foreach (string onow in other)
-									{ if (onow != "*" && onow != "") sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh other \"sh $HOME/onl/sbin/" + onow + "\""); }
+									{ if (onow != "") sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh other \"sh $HOME/onl/sbin/" + onow + "\""); }
 									sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh start -s ONL -s MTQ");
 
 
@@ -1011,9 +1011,9 @@ namespace test
 
 									sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recover -s ONL -b \$BAKDIR -i \$INSTALLDIR -d \$BAKDATE");
 									foreach (string tnow in cfg)
-									{ if (tnow != "*" && tnow != "") sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recovercfg -f " + tnow + @" -d \$INSTALLDIR/mtq/etc -b \$BAKDIR/ONL_\$BAKDATE/maps_upel/mtq/etc"); }
+									{ if (tnow != "") sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recovercfg -f " + tnow + @" -d \$INSTALLDIR/mtq/etc -b \$BAKDIR/ONL_\$BAKDATE/maps_upel/mtq/etc"); }
 									foreach (string onow in other)
-									{ if (onow != "*" && onow != "") sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh other \"sh $HOME/onl/sbin/" + onow + "\""); }
+									{ if (onow != "") sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh other \"sh $HOME/onl/sbin/" + onow + "\""); }
 									sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh other \"mtqadmin svrstart " + xtpgrp[0] + "\"");
 
 
@@ -1374,9 +1374,9 @@ namespace test
 									otheritem = other[othnum].Split(',');
 									cfgnum++; othnum++;
 									foreach (string tnow in cfgitem)
-									{ if (tnow != "*" && tnow != "") sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh updcfg -s \$INSTALLDIR/mtq/etc/" + tnow + @" -f \$HOME/install/<VERSION>/<MODULE>/install/patchscript_linux/etc/operation.ini"); }
+									{ if (tnow != "") sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh updcfg -s \$INSTALLDIR/mtq/etc/" + tnow + @" -f \$HOME/install/<VERSION>/<MODULE>/install/patchscript_linux/etc/operation.ini"); }
 									foreach (string onow in otheritem)
-									{ if (onow != "*" && onow != "") sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh other \"sh $HOME/bat/sbin/" + onow + "\""); }
+									{ if (onow != "") sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh other \"sh $HOME/bat/sbin/" + onow + "\""); }
 									sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh start -s BAT -s MTQ");
 
 									sw.WriteLine("ROLLBACK [3600, Y]   = echo \"回退--安装批量组应用\"");
@@ -1385,9 +1385,9 @@ namespace test
 									sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recover -s BAT -b \$BAKDIR -i \$INSTALLDIR -d \$BAKDATE");
 
 									foreach (string tnow in cfgitem)
-									{ if (tnow != "*" && tnow != "") sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recovercfg -f " + tnow + @" -d \$INSTALLDIR/mtq/etc -b \$BAKDIR/ONL_\$BAKDATE/maps_upel/mtq/etc"); }
+									{ if (tnow != "") sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recovercfg -f " + tnow + @" -d \$INSTALLDIR/mtq/etc -b \$BAKDIR/ONL_\$BAKDATE/maps_upel/mtq/etc"); }
 									foreach (string onow in otheritem)
-									{ if (onow != "*" && onow != "") sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh other \"sh $HOME/bat/sbin/" + onow + "\""); }
+									{ if (onow != "") sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh other \"sh $HOME/bat/sbin/" + onow + "\""); }
 									sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh start -s BAT -s MTQ");
 									break;
 
@@ -1461,9 +1461,9 @@ namespace test
 									sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recover -s BAT -b \$BAKDIR -i \$INSTALLDIR -d \$BAKDATE");
 
 									foreach (string tnow in cfg)
-									{ if (tnow != "*" && tnow != "") sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recovercfg -f " + tnow + @" -d \$INSTALLDIR/mtq/etc -b \$BAKDIR/ONL_\$BAKDATE/maps_upel/mtq/etc"); }
+									{ if (tnow != "") sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recovercfg -f " + tnow + @" -d \$INSTALLDIR/mtq/etc -b \$BAKDIR/ONL_\$BAKDATE/maps_upel/mtq/etc"); }
 									foreach (string onow in other)
-									{ if (onow != "*" && onow != "") sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh other \"sh $HOME/bat/sbin/" + onow + "\""); }
+									{ if (onow != "") sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh other \"sh $HOME/bat/sbin/" + onow + "\""); }
 									sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh other \"mtqadmin svrstart " + xtpgrp[0] + "\"");
 									break;
 
@@ -1493,9 +1493,9 @@ namespace test
 									sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recover -s BAT -b \$BAKDIR -i \$INSTALLDIR -d \$BAKDATE");
 
 									foreach (string tnow in cfgitem)
-									{ if (tnow != "*" && tnow != "") sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recovercfg -f " + tnow + @" -d \$INSTALLDIR/mtq/etc -b \$BAKDIR/ONL_\$BAKDATE/maps_upel/mtq/etc"); }
+									{ if (tnow != "") sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recovercfg -f " + tnow + @" -d \$INSTALLDIR/mtq/etc -b \$BAKDIR/ONL_\$BAKDATE/maps_upel/mtq/etc"); }
 									foreach (string onow in otheritem)
-									{ if (onow != "*" && onow != "") sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh other \"sh $HOME/bat/sbin/" + onow + "\""); }
+									{ if (onow != "") sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh other \"sh $HOME/bat/sbin/" + onow + "\""); }
 									sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh other \"mtqadmin svrstart " + xtp + "\"");
 									break;
 
@@ -1579,9 +1579,9 @@ namespace test
 
 							case 2:
 								foreach (string tnow in cfg)
-								{ if (tnow != "*" && tnow != "") sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh updcfg -s \$INSTALLDIR/mtq/etc/" + tnow + @" -f \$HOME/install/<VERSION>/<MODULE>/install/patchscript_linux/etc/operation.ini"); }
+								{ if (tnow != "") sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh updcfg -s \$INSTALLDIR/mtq/etc/" + tnow + @" -f \$HOME/install/<VERSION>/<MODULE>/install/patchscript_linux/etc/operation.ini"); }
 								foreach (string onow in other)
-								{ if (onow != "*" && onow != "") sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh other \"sh $HOME/gap/sbin/" + onow + "\""); }
+								{ if (onow != "") sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh other \"sh $HOME/gap/sbin/" + onow + "\""); }
 								sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh start -s GAP -s MTQ");
 
 								sw.WriteLine("ROLLBACK [3600, Y]   = echo \"回退--安装批量组应用\"");
@@ -1590,9 +1590,9 @@ namespace test
 								sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recover -s BAT -b \$BAKDIR -i \$INSTALLDIR -d \$BAKDATE");
 
 								foreach (string tnow in cfg)
-								{ if (tnow != "*" && tnow != "") sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recovercfg -f " + tnow + @" -d \$INSTALLDIR/mtq/etc -b \$BAKDIR/ONL_\$BAKDATE/maps_upel/mtq/etc"); }
+								{ if (tnow != "") sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recovercfg -f " + tnow + @" -d \$INSTALLDIR/mtq/etc -b \$BAKDIR/ONL_\$BAKDATE/maps_upel/mtq/etc"); }
 								foreach (string onow in other)
-								{ if (onow != "*" && onow != "") sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh other \"sh $HOME/bat/sbin/" + onow + "\""); }
+								{ if (onow != "") sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh other \"sh $HOME/bat/sbin/" + onow + "\""); }
 								sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh start -s BAT -s MTQ");
 								break;
 
@@ -1603,9 +1603,9 @@ namespace test
 								otheritem = other[othnum].Split(',');
 								cfgnum++; othnum++;
 								foreach (string tnow in cfgitem)
-								{ if (tnow != "*" && tnow != "") sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh updcfg -s \$INSTALLDIR/mtq/etc/" + tnow + @" -f \$HOME/install/<VERSION>/<MODULE>/install/patchscript_linux/etc/operation.ini"); }
+								{ if (tnow != "") sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh updcfg -s \$INSTALLDIR/mtq/etc/" + tnow + @" -f \$HOME/install/<VERSION>/<MODULE>/install/patchscript_linux/etc/operation.ini"); }
 								foreach (string onow in otheritem)
-								{ if (onow != "*" && onow != "") sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh other \"sh $HOME/gap/sbin/" + onow + "\""); }
+								{ if (onow != "") sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh other \"sh $HOME/gap/sbin/" + onow + "\""); }
 								sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/install.sh start -s BAT -s MTQ");
 
 								sw.WriteLine("ROLLBACK [3600, Y]   = echo \"回退--安装GAP组应用\"");
@@ -1614,9 +1614,9 @@ namespace test
 								sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recover -s GAP -b \$BAKDIR -i \$INSTALLDIR -d \$BAKDATE");
 
 								foreach (string tnow in cfgitem)
-								{ if (tnow != "*" && tnow != "") sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recovercfg -f " + tnow + @" -d \$INSTALLDIR/mtq/etc -b \$BAKDIR/ONL_\$BAKDATE/maps_upel/mtq/etc"); }
+								{ if (tnow != "") sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recovercfg -f " + tnow + @" -d \$INSTALLDIR/mtq/etc -b \$BAKDIR/ONL_\$BAKDATE/maps_upel/mtq/etc"); }
 								foreach (string onow in otheritem)
-								{ if (onow != "*" && onow != "") sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh other \"sh $HOME/gap/sbin/" + onow + "\""); }
+								{ if (onow != "") sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh other \"sh $HOME/gap/sbin/" + onow + "\""); }
 								sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh start -s GAP -s MTQ");
 								break;
 
@@ -1738,9 +1738,9 @@ namespace test
 									sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recover -s GAP -b \$BAKDIR -i \$INSTALLDIR -d \$BAKDATE");
 
 									foreach (string tnow in cfgitem)
-									{ if (tnow != "*" && tnow != "") sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recovercfg -f " + tnow + @" -d \$INSTALLDIR/mtq/etc -b \$BAKDIR/ONL_\$BAKDATE/maps_upel/mtq/etc"); }
+									{ if ( tnow != "") sw.WriteLine(@"                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh recovercfg -f " + tnow + @" -d \$INSTALLDIR/mtq/etc -b \$BAKDIR/ONL_\$BAKDATE/maps_upel/mtq/etc"); }
 									foreach (string onow in otheritem)
-									{ if (onow != "*" && onow != "") sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh other \"sh $HOME/gap/sbin/" + onow + "\""); }
+									{ if ( onow != "") sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh other \"sh $HOME/gap/sbin/" + onow + "\""); }
 									sw.WriteLine("                     = sh ~/install/<VERSION>/<MODULE>/install/patchscript_linux/uninstall.sh other \"mtqadmin svrstart " + xtp + "\"");
 
 									break;

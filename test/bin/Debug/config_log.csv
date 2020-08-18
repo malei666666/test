@@ -1,3 +1,7 @@
 组名,配置方式,xml配置,sh配置,是否不停机更新,更新服务项
-"UMSGRP1","统一配置","u1.xml,u2.xml","uu1.sh,uu2.sh","否","--"
-"UMSGRP2","统一配置","u1.xml,u2.xml","uu1.sh,uu2.sh","否","--"
+"BJONLGRP1","默认配置","mtqService.xml","onl_rmIPC.sh sem","否","--"
+"BJONLGRP2","默认配置","mtqService.xml","onl_rmIPC.sh sem","否","--"
+"BJBATGRP1","默认配置","mtqService.xml;mtqService.xml_all;mtqService.xml_wb","bat_rmIPC.sh sem;chmod 777 batMbatBToOReset.sh && batMbatBToOReset.sh","否","--"
+"BJBATGRP2","默认配置","mtqService.xml;mtqService.xml_all;mtqService.xml_wb","bat_rmIPC.sh sem;chmod 777 batMbatBToOReset.sh && batMbatBToOReset.sh","否","--"
+"BJUMSGRP1","默认配置","--","--","否","--"
+"BJUMSGRP2","默认配置","--","--","否","--"
